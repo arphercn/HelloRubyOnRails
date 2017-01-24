@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   # 写在控制器最后,防止让其他方法无法访问
   private
     def user_params
