@@ -5,7 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
     @other_user = users(:archer)
-    @admin = users(:bbbb)
+    @admin = users(:admin)
   end
 
   test "should redirect index when not logged in" do
