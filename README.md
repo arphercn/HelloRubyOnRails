@@ -39,3 +39,20 @@ $ rails server
 
 For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+
+heroku 操作数据库  
+```
+heroku run cosole
+User.all
+e = User.find(5)
+e.destroy
+```
+调试邮箱感言  
+昨晚用本教程的调试,测到00:30,无果  
+因为技术是复杂的  
+今早用了一个早上,google搜索,[https://kelby.gitbooks.io/rails-beginner-s-guide/content/actionmailer/]  
+调试方法:google, copy代码放置到响应的文件, !rails server重启!  
+rails mail ,先用gem 'mail'在controler调通了126邮箱,成功一小步,  
+后用Action Mailer 改善,根据报错,不断调试,终于他娘的OK了,12:24了,去吃饭了  
+ps,报错host,通过google修改后仍然保持, !!rails server重启!!OK了
+

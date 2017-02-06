@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def account_activation(user)
     @user = user
-    mail to: user.email, subject: "Account activation"
+    mail to: @user.email, subject: "Account activation"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -19,5 +19,17 @@ class UserMailer < ApplicationMailer
     @greeting = "Hi"
 
     mail to: "to@example.org"
+  end
+
+  def daily_email(user)
+    @var = "var"
+    @user = user
+
+    # 发件人是这里的 from，不是上面 smtp_settings 里设置的
+    #mail(to: "201313488@qq.com", from: "bfengyi@126.com", subject: "test") do |format|
+    #  format.text
+    #  format.html
+    #end
+    mail to: @user.email, subject: "Account activation"
   end
 end

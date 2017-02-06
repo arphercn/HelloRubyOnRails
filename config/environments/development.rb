@@ -27,13 +27,27 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true # arpher change
-  config.action_mailer.delivery_method = :test
+  #config.action_mailer.raise_delivery_errors = true # arpher change
+  #config.action_mailer.delivery_method = :test
   # 本地服务器
   host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = { host: host }
 
   config.action_mailer.perform_caching = false
+  
+  # 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
+  ActionMailer::Base.raise_delivery_errors = false
+
+  # 使用单独配置文件的话，可以用 config.action_mailer 代替下面的 ActionMailer::Base
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.126.com",
+    :port    => 25,
+    :authentication => :plain,
+    :user_name      => "bfengyi@126.com",
+    :password       => "boxhezhe9",
+    :enable_starttls_auto => true
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

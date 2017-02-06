@@ -59,20 +59,24 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
   host = 'mysterious-ridge-49742.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
+
+  config.action_mailer.perform_caching = false
+  
+  # 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
+  ActionMailer::Base.raise_delivery_errors = false
+
+  # 使用单独配置文件的话，可以用 config.action_mailer 代替下面的 ActionMailer::Base
+  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
+    :address => "smtp.126.com",
+    :port    => 25,
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
+    :user_name      => "bfengyi@126.com",
+    :password       => "boxhezhe9",
     :enable_starttls_auto => true
-  }
+  }}
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

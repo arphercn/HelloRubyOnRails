@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/mail',  to: 'users#mail'
+  
   resources :account_activations, only: [:edit]
 
   get    '/login',   to: 'sessions#new'

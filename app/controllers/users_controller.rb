@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def mail
+    @user = User.find(194)
+    UserMailer.daily_email(@user).deliver_now 
+  end
+
   def edit
     # @user = User.find(params[:id]) # 10.25
   end
