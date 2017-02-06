@@ -65,11 +65,11 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   
   # 邮件发送报错时，是否把错误信息发送给用户。开发环境下，可设置为 true
-  ActionMailer::Base.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
 
   # 使用单独配置文件的话，可以用 config.action_mailer 代替下面的 ActionMailer::Base
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
     :address => "smtp.126.com",
     :port    => 25,
     :domain         => "herokuapp.com",
