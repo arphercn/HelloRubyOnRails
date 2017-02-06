@@ -72,6 +72,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.126.com",
     :port    => 25,
+    :domain         => "herokuapp.com",
     :authentication => :plain,
     :user_name      => "bfengyi@126.com",
     :password       => "boxhezhe9",
