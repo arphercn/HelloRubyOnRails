@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/mail',  to: 'users#mail'
   
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

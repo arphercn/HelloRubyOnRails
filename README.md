@@ -54,5 +54,11 @@ e.destroy
 调试方法:google, copy代码放置到响应的文件, !rails server重启!  
 rails mail ,先用gem 'mail'在controler调通了126邮箱,成功一小步,  
 后用Action Mailer 改善,根据报错,不断调试,终于他娘的OK了,12:24了,去吃饭了  
-ps,报错host,通过google修改后仍然保持, !!rails server重启!!OK了
+ps,报错host,通过google修改后仍然保持, !!rails server重启!!OK了  
+git push heroku时报错,坑是production.rb里复制的时候多了个},经验:仔细看报错提示,可以提交后,测试时,注册后页面报错Application error,先不管了
 
+命令统计  
+生成控制器(不生成测试)
+rails generate controller PasswordResets new edit --no-test-framework
+生成迁移字段
+rails generate migration add_reset_to_users reset_digest:string reset_sent_at:datetime
