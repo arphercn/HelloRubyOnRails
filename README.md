@@ -62,3 +62,7 @@ git push heroku时报错,坑是production.rb里复制的时候多了个},经验:
 rails generate controller PasswordResets new edit --no-test-framework
 生成迁移字段
 rails generate migration add_reset_to_users reset_digest:string reset_sent_at:datetime
+生成模型belongs_to :user
+rails generate model Micropost content:text user:references
+
+rails test:models
