@@ -3,7 +3,9 @@
 This is the sample application for
 [*Ruby on Rails Tutorial:
 Learn Web Development with Rails*](http://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/).
+by [Michael Hartl](http://www.michaelhartl.com/).  
+参考版见<git@bitbucket.org:railstutorial/sample_app_4th_ed.git>  
+used name is  **sample_app**
 
 ## License
 
@@ -55,7 +57,7 @@ e.destroy
 rails mail ,先用gem 'mail'在controler调通了126邮箱,成功一小步,  
 后用Action Mailer 改善,根据报错,不断调试,终于他娘的OK了,12:24了,去吃饭了  
 ps,报错host,通过google修改后仍然保持, !!rails server重启!!OK了  
-git push heroku时报错,坑是production.rb里复制的时候多了个},经验:仔细看报错提示,可以提交后,测试时,注册后页面报错Application error,先不管了
+git push heroku时报错,坑是production.rb里复制的时候多了个},经验:仔细看报错提示,可以提交后,测试时,注册后页面报错Application error,待以后验证
 
 命令统计  
 生成控制器(不生成测试)
